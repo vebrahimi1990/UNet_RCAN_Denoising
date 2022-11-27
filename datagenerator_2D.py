@@ -1,5 +1,4 @@
 import random
-
 import numpy as np
 from skimage.io import imread
 from tifffile import imread
@@ -17,7 +16,6 @@ def data_generator(GT_image_dr, lowSNR_image_dr, patch_size, n_patches, n_channe
         low = np.reshape(low, (1, 1, low.shape[0], low.shape[1]))
     print(gt.shape)
     m = gt.shape[0]
-    # m = 5
     img_size = gt.shape[2]
 
     gt = gt / (gt.max(axis=(-1, -2))).reshape((gt.shape[0], gt.shape[1], 1, 1))
@@ -87,11 +85,8 @@ def data_generator(GT_image_dr, lowSNR_image_dr, patch_size, n_patches, n_channe
         yys = yyy
 
     xxs[xxs < 0] = 0
-    for i in range(len(xxs)):
-        for j in range(n_channel):
-            xxs[i, :, :, j] = xxs[i, :, :, j] / xxs[i, :, :, j].max()
-            if yys[i, :, :, j].max() > 0:
-                yys[i, :, :, j] = yys[i, :, :, j] / yys[i, :, :, j].max()
+    xxs = xxs / (xxs.max(axis=(1, 2))).reshape((xxs.shape[0], 1, 1, 1))
+    yys = yys / (yys.max(axis=(1, 2))).reshape((yys.shape[0], 1, 1, 1))
 
     ratio = ratio
     m1 = np.floor(xxs.shape[0] * ratio).astype(np.int32)
