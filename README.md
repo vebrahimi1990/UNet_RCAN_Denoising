@@ -1,5 +1,5 @@
 # UNet_RCAN_Denoising
-UNet-RCAN is a two step prediction algorithm for supervised denosing of super-resolution imaging data built in Tensorflow 2.7.0 framework.
+UNet-RCAN is a two-step prediction algorithm for supervised denosing of super-resolution imaging data built in Tensorflow 2.7.0 framework.
 
 # Dependencies
 ```pip install -r requirements.txt```
