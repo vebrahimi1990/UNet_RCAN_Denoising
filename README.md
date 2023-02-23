@@ -1,5 +1,5 @@
 # UNet_RCAN_Denoising
-[![paper](https://img.shields.io/badge/biorXiv-Paper-brightgreen)](https://www.biorxiv.org/content/biorxiv/early/2023/01/27/2023.01.26.525571.full.pdf)
+[![paper](https://img.shields.io/badge/bioRxiv-Paper-brightgreen)](https://www.biorxiv.org/content/biorxiv/early/2023/01/27/2023.01.26.525571.full.pdf)
 
 UNet-RCAN is a two-step prediction algorithm for supervised denosing of fast stimulated emission depletion microscopy (STED) data, built in Tensorflow 2.7.0 framework.
 
