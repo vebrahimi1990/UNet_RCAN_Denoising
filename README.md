@@ -19,3 +19,4 @@ For evaluation, add the directory to your test dataset and a directory to the sa
 ![plot](https://github.com/vebrahimi1990/UNet_RCAN_Denoising/blob/master/image%20files/Architecture.png)
 
 # Results
+![plot](https://github.com/vebrahimi1990/UNet_RCAN_Denoising/blob/master/image%20files/Results.png)
