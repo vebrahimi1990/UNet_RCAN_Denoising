@@ -3,9 +3,9 @@ import numpy as np
 import tensorflow as tf
 from keras.models import Input
 from tifffile import imwrite
-from UNet_RCAN_Denoising.config.config_2D import CFG
-from UNet_RCAN_Denoising.data_preparation.data_generator import data_generator_2D
-from UNet_RCAN_Denoising.model.UNet_RCAN_2D import UNet_RCAN
+from config.config_2D import CFG
+from data_preparation.data_generator import data_generator_2D
+from model.UNet_RCAN_2D import UNet_RCAN
 
 gpus = tf.config.list_physical_devices('GPU')
 tf.config.set_logical_device_configuration(gpus[0], [tf.config.LogicalDeviceConfiguration(memory_limit=12000)])

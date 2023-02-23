@@ -1,7 +1,10 @@
+from collections import OrderedDict
+CFG = OrderedDict()
+
 CFG = {
     "data": {
-        "GT_image_dr": r"\train\Average.tif",
-        "lowSNR_image_dr": r"\train\1frame.tif",
+        "GT_image_dr": r"\.tif",
+        "lowSNR_image_dr": r"\.tif",
         "patch_size": 256,
         "n_patches": 16,
         "n_channel": 0,
@@ -12,10 +15,10 @@ CFG = {
         "augment": False
     },
     "data_test": {
-        "GT_image_dr": r"\test\Average.tif",
-        "lowSNR_image_dr": r"\test\1frame.tif",
-        "save_dr": r"\Denoising-STED",
-        "patch_size": 2048,
+        "GT_image_dr": r"\.tif",
+        "lowSNR_image_dr": r"\.tif",
+        "save_dr": r"",
+        "patch_size": 1024,
         "n_patches": 1,
         "n_channel": 0,
         "threshold": 0.0,
@@ -34,7 +37,8 @@ CFG = {
         "lr": 0.0001,
         "n_epochs": 200,
         "batch_size": 1,
-        "save_dr": r"\model.h5"
+        "save_dr": r"\.h5",
+        "save_config": r""
     },
     "callbacks": {
         "patience_stop": 20,
@@ -46,6 +50,6 @@ CFG = {
         "lr": 0.0001,
         "n_epochs": 200,
         "batch_size": 1,
-        "save_dr": r"\model.h5"
+        "save_dr": r"\.h5"
     }
 }

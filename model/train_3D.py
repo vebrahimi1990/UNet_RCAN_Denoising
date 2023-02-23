@@ -1,11 +1,12 @@
 import tensorflow as tf
+import os
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 from keras.models import Input
 from tensorflow import keras
-from UNet_RCAN_Denoising.config.config_3D import CFG
-from UNet_RCAN_Denoising.data_preparation.data_generator import data_generator_3D
-from UNet_RCAN_Denoising.model.UNet_RCAN_3D import UNet_RCAN
-from UNet_RCAN_Denoising.model.loss import loss_3D
+from config.config_3D import CFG
+from data_preparation.data_generator import data_generator_3D
+from model.UNet_RCAN_3D import UNet_RCAN
+from model.loss import loss_3D
 
 gpus = tf.config.list_physical_devices('GPU')
 tf.config.set_logical_device_configuration(gpus[0], [tf.config.LogicalDeviceConfiguration(memory_limit=12000)])
@@ -27,6 +28,9 @@ callbacks = [
     ReduceLROnPlateau(monitor='val_loss', factor=callback['factor_lr'], patience=callback['patience_lr']),
     ModelCheckpoint(filepath=model_config['save_dr'], verbose=1, save_best_only=True, save_weights_only=True)]
 
-results = model.fit(x=x_train[0:10], y=y_train[0:10], batch_size=model_config['batch_size'],
+with open(os.path.join(model_config['save_config'], '', 'configuration.txt'), 'w') as data:
+    data.write(str(CFG['model']))
+
+results = model.fit(x=x_train, y=y_train, batch_size=model_config['batch_size'],
                     epochs=model_config['n_epochs'],
                     verbose=1, callbacks=callbacks, validation_split=0.1)

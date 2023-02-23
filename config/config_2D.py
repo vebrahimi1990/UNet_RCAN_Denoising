@@ -14,8 +14,8 @@ CFG = {
     "data_test": {
         "GT_image_dr": r"\test\Average.tif",
         "lowSNR_image_dr": r"\test\1frame.tif",
-        "save_dr": r"D:\Projects\Denoising-STED",
-        "patch_size": 2048,
+        "save_dr": r"\Denoising-STED",
+        "patch_size": 1024,
         "n_patches": 1,
         "n_channel": 0,
         "threshold": 0.0,
@@ -34,7 +34,8 @@ CFG = {
         "lr": 0.0001,
         "n_epochs": 200,
         "batch_size": 1,
-        "save_dr": r"D:\Projects\Denoising-STED\model.h5"
+        "save_dr": r"\model.h5",
+        "save_config": r"\Denoising-STED"
     },
     "callbacks": {
         "patience_stop": 20,
@@ -46,6 +47,6 @@ CFG = {
         "lr": 0.0001,
         "n_epochs": 200,
         "batch_size": 1,
-        "save_dr": r"D:\Projects\Denoising-STED\model.h5"
+        "save_dr": r"\model.h5"
     }
 }

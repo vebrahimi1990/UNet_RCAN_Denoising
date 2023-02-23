@@ -132,10 +132,10 @@ class UNet(layers.Layer):
         return x
 
 
-class UNet_RCAN(keras.Model):
+class UNet_RCAN(keras.Model, ABC):
     def __init__(self, model_config):
         super(UNet_RCAN, self).__init__()
-        self.unet = UNet(model_config['filters'], model_config['filters_cab'], model_config['kernel'],
+        self.unet = UNet(sorted(model_config['filters']), model_config['filters_cab'], model_config['kernel'],
                          model_config['dropout'])
         self.rcan = RCAN(model_config['num_RG'], model_config['num_cab'], model_config['filters_cab'],
                          filters=model_config['filters'][0], kernel=model_config['kernel'],
