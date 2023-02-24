@@ -10,7 +10,7 @@ UNet-RCAN is a two-step prediction algorithm for supervised denosing of fast sti
 Notebooks are in the notebook folder. 
 
 # Training
-```!git clone https://github.com/vebrahimi1990/UNet_RCAN_Denoising.git```
+```git clone https://github.com/vebrahimi1990/UNet_RCAN_Denoising.git```
 
 For training, add the directory to your training dataset and a directory to save the model to the configuration file ```(config_(2D/3D).py)```, then train the model using ```train_(2D/3D).py```. 
 
