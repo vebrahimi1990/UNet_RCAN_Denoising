@@ -25,10 +25,10 @@ python train_3D.py
 For evaluation, add the directory to your test dataset and a directory to the saved model to the configuration file ```(config_(2D/3D).py)```.
 
 ```
-evaluate_2D.py
+python evaluate_2D.py
 ```
 ```
-evaluate_3D.py
+python evaluate_3D.py
 ```
 
 # Architecture
