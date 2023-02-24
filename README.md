@@ -4,13 +4,17 @@
 UNet-RCAN is a two-step prediction algorithm for supervised denosing of fast stimulated emission depletion microscopy (STED) data, built in Tensorflow 2.7.0 framework.
 
 # Dependencies
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 # Notebooks
 Notebooks are in the notebook folder. 
 
 # Training
-```git clone https://github.com/vebrahimi1990/UNet_RCAN_Denoising.git```
+```
+git clone https://github.com/vebrahimi1990/UNet_RCAN_Denoising.git
+```
 
 For training, add the directory to your training dataset and a directory to save the model to the configuration file ```(config_(2D/3D).py)```.
 
