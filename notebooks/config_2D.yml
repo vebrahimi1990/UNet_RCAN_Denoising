@@ -1,0 +1,61 @@
+data:
+    GT_image_dr: "/path_to_gt_stack/name.tif"
+    lowSNR_image_dr: "/path_to_input_stack/name.tif"
+    patch_size: 256
+    n_patches: 1
+    n_channel: 0
+    threshold: False
+    lp: 0.5
+    normalization_type: instance
+    normalization_range: [0, 1]
+    add_noise: False
+    shuffle: True
+    augment: False
+
+data_test:
+    GT_image_dr: "/path_to_gt_stack/name.tif"
+    lowSNR_image_dr: "/path_to_input_stack/name.tif"
+    save_dr: "/path_to_savedir"
+    patch_size: 600
+    n_patches: 1
+    n_channel: 0
+    threshold: False
+    lp: 0.5
+    normalization_type: instance
+    normalization_range: [0, 1]
+    add_noise: False
+    shuffle: True
+    augment: False
+
+model:
+    filters: [64, 128, 256]
+    filters_cab: 4
+    num_RG: 3
+    num_cab: 8
+    kernel: 7
+    dropout: 0.2
+    lr: 0.0001
+    n_epochs: 100
+    batch_size: 10
+    activation: leaky_relu
+    kernel_initializer: glorot_uniform
+    clip_value: 0.01
+    loss_type: custom
+    norm_factor: 2
+    l2_regularization: 0
+    edge_regularization: 0.05
+    save_dr: "/path_to_savedir/model.h5"
+    save_config: "/path_to_savedir"
+
+callbacks:
+    patience_stop: 6
+    factor_lr: 0.2
+    patience_lr: 4
+    num_cab: 8
+    kernel: 7
+    dropout: 0.2
+    lr: 0.0001
+    n_epochs: 100
+    batch_size: 10
+    val_split : 0.1
+    save_dr: "/path_to_savedir/model.h5"
