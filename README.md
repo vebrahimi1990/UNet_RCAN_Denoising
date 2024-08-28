@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 # Notebooks
-Notebooks are in the ```notebooks``` folder. 
+Notebooks are in the ```notebooks``` folder along with a description of adjustable parameters.
 
 # Training
 ```
